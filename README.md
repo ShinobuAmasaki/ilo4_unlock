@@ -1,4 +1,7 @@
 This article README_ja.md is translated into Japanese by Shinobu Amasaki, and is originally from ilo4_unlock/README.md in English by Kendall Goto.
+このファイルREADME_ja.mdは雨崎しのぶによって日本語に翻訳されたものであり、オリジナルはKendall Gotoにより英語で書かれたilo4_unlock/README.mdである。
+この記事に書かれたことを実行して生じた、あらゆる損害に対して翻訳者は責任を負わない。
+
 
 # ilo4\_unlock (Silence of the Fans)
 
@@ -22,6 +25,20 @@ This article README_ja.md is translated into Japanese by Shinobu Amasaki, and is
 > This repo does not contain any iLO 4 binaries; unmodified or patched as they are owned by HP.
 > Websites have, in the past, been served with cease and desist orders from HP for hosting iLO binaries.
 > For security purposes, I encourage you to follow the steps listed to build the patched version of the iLO yourself, while verifying the contents of the patched code.
+
+これらのコードを使用した場合、あなたのシステムに重大な損害を及ぼすリスクがある。
+ファームウェアの書き込み時にエラーが生じた場合、または破損したファームウェアをフラッシュすることになった場合に、iLOはそれ自体を回復できなくなる。
+iLOのフラッシュチップはオンボードでプログラムすることができないため、機能を回復するには完全にハンダを除去して再プログラムする必要がある。
+さらに、含まれている新機能を利用すると、サーバーが過熱したり、損傷をうける可能性がある。
+あなたが何をしようとしているか分からない場合は、このファームウェアのインストールを実行してはならない。
+**あなたは警告を受けた。**
+このコードに保証はなく、あなたが引き起こした損害に対して私は責任を負わない。
+私は個人的にこのファームウェアをDL380p Gen8およびDL380e Gen8でのみテストした。
+
+このリポジトリにはiLO4バイナリは含まれていない。未修正またはパッチが適用されたものはHPによって所有されている。
+過去にいくつかのウェブサイトがiLOバイナリを提供することに関して、HPから停止命令を受けていました。
+セキュリティ上の理由から、パッチを適用したコードの内容を確認しながら、記載されている手順に従ってパッチを適用したバージョンのiLOを自分で構築することを推奨する。
+
 
 ## Getting Started
 
@@ -201,4 +218,9 @@ Usage:
 >
 >  Airbus Security Lab's "Subverting your server through its BMC: the HPE iLO4 case" (presented version)](https://airbus-seclab.github.io/ilo/RECONBRX2018-Slides-Subverting_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf)
 
-
+## 翻訳者によるメモ
+翻訳者は、ML350 Gen9のiLO4に対して、このコードをv2.77ファームウェアに適用して実行した。
+おおむね正常に稼働しているがいくつかの問題が発見された。
+1. `h`, `fan`, `ocsd`などのコマンドは実行できるが、結果が標準出力されない。 
+2. `fan p N max VALUE`などの実行は、ファンの出力を制御できるので、たしかに実行されてはいるようだが、VALUEと制御値の対応が一致していない。
+  - たとえば、`fan p 2 max 20`とするとiLOの管理ページで確認できる出力は23%、`fan p 2 max 20`とすると出力は7%になる。
