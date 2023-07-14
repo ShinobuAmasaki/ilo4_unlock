@@ -1,5 +1,6 @@
-This article README_ja.md is translated into Japanese by Shinobu Amasaki, and is originally from ilo4_unlock/README.md in English by Kendall Goto.
-このファイルREADME_ja.mdは雨崎しのぶによって日本語に翻訳されたものであり、オリジナルはKendall Gotoにより英語で書かれたilo4_unlock/README.mdである。
+This article README_ja.md is translated into Japanese by Shinobu Amasaki, and is originally from [kendallgoto/ilo4_unlock/README.md](https://github.com/kendallgoto/ilo4_unlock/blob/main/README.md) in English by Kendall Goto.
+
+このファイルREADME_ja.mdは雨崎しのぶによって日本語に翻訳されたものであり、オリジナルはKendall Gotoにより英語で書かれた[kendallgoto/ilo4_unlock/README.md](https://github.com/kendallgoto/ilo4_unlock/blob/main/README.md)である。
 この記事に書かれたことを実行して生じた、あらゆる損害に対して翻訳者は責任を負わない。
 
 
